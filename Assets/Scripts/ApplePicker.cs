@@ -44,8 +44,8 @@ public class ApplePicker : MonoBehaviour
         Destroy(tBasketGO);
         if (basketList.Count == 0)
         {
-            SceneManager.LoadScene("MainMenu");
-            Application.Quit();
+            SceneManager.LoadScene("_Scene_0");
+            //Application.Quit();
         }
     }
 }
