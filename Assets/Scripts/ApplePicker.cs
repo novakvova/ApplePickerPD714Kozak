@@ -36,14 +36,16 @@ public class ApplePicker : MonoBehaviour
         {
             Destroy(tGO);
         }
-        if (basketList.Count == 0)
-        {
-            SceneManager.LoadScene("_Scene_0");
-        }
+        
 
         int basketindex = basketList.Count - 1;
         GameObject tBasketGO = basketList[basketindex];
         basketList.RemoveAt(basketindex);
         Destroy(tBasketGO);
+        if (basketList.Count == 0)
+        {
+            SceneManager.LoadScene("MainMenu");
+            Application.Quit();
+        }
     }
 }
