@@ -8,6 +8,7 @@ public class AppleTree : MonoBehaviour
     //Шаблон для створення яблука
     public GameObject applePrefab;
 
+    public int zminna = 0;
     //Швидкість руху яблука
     public float speed = 1f;
 
@@ -37,6 +38,7 @@ public class AppleTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //Просте переміщення
         Vector3 pos = transform.position;
         pos.x += speed * Time.deltaTime;
@@ -56,9 +58,24 @@ public class AppleTree : MonoBehaviour
     {
         //Тепер випадкова зміна напрямку привязана до часу,
         //тому, що виконується в методі FixedUpdate()
+        
         if (Random.value < changeToChangeDirections)  //починаємо рухатися рандомом, якщо рандом попав
         {
             speed *= -1;
+            zminna++;
+        }
+        if (zminna % 20 == 0)
+        {
+            if (secondsBetweenAppleDrops > 0.5f)
+            {
+                secondsBetweenAppleDrops -= 0.005f;
+            }
+            if (secondsBetweenAppleDrops <= 0.2f && speed < 20f)
+            {
+                speed += 0.01f;
+            }
+
+            speed++;
         }
     }
 }

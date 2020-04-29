@@ -33,7 +33,7 @@ public class Basket : MonoBehaviour
         {
             Destroy(collidedWith);
         }
-
+        
             int score = int.Parse(scoreGT.text);
             score += 100;
             scoreGT.text = score.ToString();
