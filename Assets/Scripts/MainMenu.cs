@@ -14,5 +14,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void StartDemolition()
+    {
+        SceneManager.LoadScene("_Scene_Dem");
+    }
 
 }
