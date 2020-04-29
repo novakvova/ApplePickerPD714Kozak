@@ -27,7 +27,10 @@ public class ApplePicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("_Scene_0");
+        }
     }
     public void AppleDestroyed()
     { 
