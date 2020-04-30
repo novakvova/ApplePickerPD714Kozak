@@ -12,7 +12,7 @@ public class FollowCam : MonoBehaviour
         camZ = this.transform.position.z;
     }
 
-    void FisedUpdate()
+    void FixedUpdate()
     {
         if (POI == null) return;
         Vector3 destination = POI.transform.position;
